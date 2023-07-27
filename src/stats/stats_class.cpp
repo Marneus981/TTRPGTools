@@ -12,8 +12,12 @@ pair<int, int> stats::get_stat(string stat){
 
     auto found = _Stats.find(stat);
     //Error:Stat name not found!
-    if(found == _Stats.end()) return make_pair(-1,-1);
+    if(found == _Stats.end()){ 
+        if (verbose_mode) cout << "Error in get_stat, stat not found" << endl;
+        return make_pair(-1,-1);
+    };
     pair<int, int> return_stat = found->second;
+    if (verbose_mode) cout << "Found stat: " << stat << " with value: " << return_stat.first << " and modifier: " << return_stat.second << endl;
     return return_stat;
 
     /*//Lambda function to find stat in vector
