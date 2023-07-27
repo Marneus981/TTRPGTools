@@ -1,7 +1,6 @@
 Pending:
 #Implement Verbose
     #In stats
-#Implement default constructor
 #Implement WARNINGS, ERRORS
 #Create a setting class
 #Improve makefile
@@ -9,5 +8,8 @@ Pending:
 #Check that exceptions call destructor
 #Learn how to debug memory on VS Code
 #Make script for debugging (which loads in VERBOSE as well as other setting)
-#Create default constructor
-#Create copy constructor
+#Create default constructor stats
+#Create copy constructor stats
+##Create constructor that doesnt take in a list? That would imply that we bridge the external nature of stat allocation into the stats class function itself
+#Change .txt setting to .ini? (or implement some .ini settings)
+#Verify if destructor is called upon throw
