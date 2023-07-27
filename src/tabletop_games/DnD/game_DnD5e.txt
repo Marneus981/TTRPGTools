@@ -1,0 +1,17 @@
+[TTRPG Data]
+GameName = Dungeons and Dragons
+Edition = 5th Edition
+[Stat Data]
+Stats = Strenght,Dexterity,Constitution,Intelligence,Wisdom,Charisma
+ScoreInit = 1
+ModInit = -5
+ScoreGrpLen = 2
+ModScal = 1
+[Standard Array]
+StdArray = 15,14,13,12,10,8
+[Point Buy]
+PtBuyMin = 8
+PtBuyMax = 15
+CostMin = 0
+CostScal = 1
+
