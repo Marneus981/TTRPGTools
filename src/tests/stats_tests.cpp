@@ -16,9 +16,12 @@ int main(){
     cout << "Stats Tests Initiating!" << endl;
     //Test 1: Constructor
     cout << "Test 1: Constructor" << endl;
+    string correct_path = "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt";
+    string wrong_path = "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt";
     //stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
     try {
-        stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt"); 
+        list<int> test1_stats = {8,10,12,13,14,15};
+        stats test1(test1_stats, correct_path); 
     } catch (const char* msg) {
         cout << "Test 1 Failed!" << endl;
         cout << msg << endl;
@@ -37,7 +40,8 @@ int main(){
     //##Destructor SHOULD be called here
     //stats test1_1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt");
     try {
-        stats test1_1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt");
+        list<int> test1_1_stats = {8,10,12,13,14,15};
+        stats test1_1(test1_1_stats, wrong_path);
     } catch (const char* msg) {
         cout << "Test 1.1 Passed!" << endl;
         cout << msg << endl;
@@ -51,7 +55,8 @@ int main(){
     //##Destructor SHOULD be called here
     //stats test1_2(list<int> {8,10,12,13,14}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
     try {
-        stats test1_2(list<int> {8,10,12,13,14}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+        list<int> test1_2_stats = {8,10,12,13,14};
+        stats test1_2(test1_2_stats, correct_path);
     } catch (const char* msg) {
         cout << "Test 1.2 Passed!" << endl;
         cout << msg << endl;
@@ -64,16 +69,20 @@ int main(){
     cout << "Test 1.5: Destructor" << endl;
     //auto dest_test = new stats(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
     //delete dest_test;  
-    try {
-        auto dest_test = new stats(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
-        delete dest_test;  
-    } catch (const char* msg) {
+    list<int> test1_5_stats = {8,10,12,13,14,15};
+    auto dest_test = new stats(test1_5_stats, correct_path);
+    delete dest_test;  
+
+    //Memory Check for Destructor
+    cout << "Did the Destructor work? (y/n)" << endl;
+    cin >> input;
+    if (input == 'y'){
+        cout << "Test 1.5 Passed!" << endl;
+    } else {
         cout << "Test 1.5 Failed!" << endl;
-        cout << msg << endl;
-        //cerr << msg << endl;
     }
+        //cerr << msg << endl;
     //Figure out if Test 1.1 passed?
-    cout << "If no Test 1.1 Failed! text is  found above, Test Passed!" << endl;
 
     cout << "Test 1 Finished" << endl;
     //Test 2: Update Modifiers
