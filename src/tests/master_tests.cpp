@@ -74,7 +74,7 @@ int main(){
     cout << "Master Tests Complete!" << endl;
     
     //Wait on user input to continue
-    cout << "Press Enter to continue..." << endl;
-    cin >> input;
+    cout << "Press Enter to continue…" << endl;
+    cin.get();
     return 0;
 };

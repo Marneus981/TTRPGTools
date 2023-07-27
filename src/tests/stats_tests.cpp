@@ -21,7 +21,8 @@ int main(){
         stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt"); 
     } catch (const char* msg) {
         cout << "Test 1 Failed!" << endl;
-        cerr << msg << endl;
+        cout << msg << endl;
+        //cerr << msg << endl;
     }
     //Ask if Test 1 passed
     cout << "Did Test 1 pass? (y/n)" << endl;
@@ -39,7 +40,8 @@ int main(){
         stats test1_1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt");
     } catch (const char* msg) {
         cout << "Test 1.1 Passed!" << endl;
-        cerr << msg << endl;
+        cout << msg << endl;
+        //cerr << msg << endl;
     }
     //Figure out if Test 1.1 passed?
     cout << "If no Test 1.1 Passed! text is  found above, Test Failed!" << endl;
@@ -52,7 +54,8 @@ int main(){
         stats test1_2(list<int> {8,10,12,13,14}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
     } catch (const char* msg) {
         cout << "Test 1.2 Passed!" << endl;
-        cerr << msg << endl;
+        cout << msg << endl;
+        //cerr << msg << endl;
     }
     //Figure out if Test 1.2 passed?
     cout << "If no Test 1.2 Passed! text is  found above, Test Failed!" << endl;
@@ -66,7 +69,8 @@ int main(){
         delete dest_test;  
     } catch (const char* msg) {
         cout << "Test 1.5 Failed!" << endl;
-        cerr << msg << endl;
+        cout << msg << endl;
+        //cerr << msg << endl;
     }
     //Figure out if Test 1.1 passed?
     cout << "If no Test 1.1 Failed! text is  found above, Test Passed!" << endl;
@@ -85,5 +89,9 @@ int main(){
     //Test 4.1: Invalid stat name
     cout << "Test 4 Finished" << endl;
     cout << "Master Tests Finished" << endl;
+    
+    //Wait on user input to continue
+    cout << "Press Enter to continue…" << endl;
+    cin.get();
     return 0;
 };
