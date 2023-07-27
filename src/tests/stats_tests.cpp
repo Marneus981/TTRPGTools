@@ -16,16 +16,61 @@ int main(){
     cout << "Stats Tests Initiating!" << endl;
     //Test 1: Constructor
     cout << "Test 1: Constructor" << endl;
-    stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    //stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    try {
+        stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt"); 
+    } catch (const char* msg) {
+        cout << "Test 1 Failed!" << endl;
+        cerr << msg << endl;
+    }
+    //Ask if Test 1 passed
+    cout << "Did Test 1 pass? (y/n)" << endl;
+    cin >> input;
+    if (input == 'y'){
+        cout << "Test 1 Passed!" << endl;
+    } else {
+        cout << "Test 1 Failed!" << endl;
+    }
     //Test 1.1: Invalid _path_to_game
+    cout << "Test 1.1: Invalid _path_to_game" << endl;
     //##Destructor SHOULD be called here
-    stats test1_1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt");
+    //stats test1_1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt");
+    try {
+        stats test1_1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt");
+    } catch (const char* msg) {
+        cout << "Test 1.1 Passed!" << endl;
+        cerr << msg << endl;
+    }
+    //Figure out if Test 1.1 passed?
+    cout << "If no Test 1.1 Passed! text is  found above, Test Failed!" << endl;
+    
     //Test 1.2: Invalid size of _stats
+    cout << "Test 1.2: Invalid size of _stats" << endl;
     //##Destructor SHOULD be called here
-    stats test1_2(list<int> {8,10,12,13,14}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    //stats test1_2(list<int> {8,10,12,13,14}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    try {
+        stats test1_2(list<int> {8,10,12,13,14}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    } catch (const char* msg) {
+        cout << "Test 1.2 Passed!" << endl;
+        cerr << msg << endl;
+    }
+    //Figure out if Test 1.2 passed?
+    cout << "If no Test 1.2 Passed! text is  found above, Test Failed!" << endl;
     //REMEMBER TO TEST FOR INVALID UPDATE_MOD
     //Test 1.5: Destructor
     cout << "Test 1.5: Destructor" << endl;
+    //auto dest_test = new stats(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    //delete dest_test;  
+    try {
+        auto dest_test = new stats(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+        delete dest_test;  
+    } catch (const char* msg) {
+        cout << "Test 1.5 Failed!" << endl;
+        cerr << msg << endl;
+    }
+    //Figure out if Test 1.1 passed?
+    cout << "If no Test 1.1 Failed! text is  found above, Test Passed!" << endl;
+
     cout << "Test 1 Finished" << endl;
     //Test 2: Update Modifiers
     cout << "Test 2: Update Modifiers" << endl;
