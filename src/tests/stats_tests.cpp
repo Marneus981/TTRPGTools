@@ -16,9 +16,16 @@ int main(){
     cout << "Stats Tests Initiating!" << endl;
     //Test 1: Constructor
     cout << "Test 1: Constructor" << endl;
+    stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
     //Test 1.1: Invalid _path_to_game
+    //##Destructor SHOULD be called here
+    stats test1_1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt");
     //Test 1.2: Invalid size of _stats
+    stats test1_2(list<int> {8,10,12,13,14}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    //##Destructor SHOULD be called here
     //REMEMBER TO TEST FOR INVALID UPDATE_MOD
+    //Test 1.5: Destructor
+    cout << "Test 1.5: Destructor" << endl;
     cout << "Test 1 Finished" << endl;
     //Test 2: Update Modifiers
     cout << "Test 2: Update Modifiers" << endl;
