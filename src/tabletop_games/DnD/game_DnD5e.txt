@@ -10,6 +10,7 @@ ModScal =1
 [Standard Array]
 StdArray =15,14,13,12,10,8
 [Point Buy]
+PtBuyPts =27
 PtBuyMin =8
 PtBuyMax =15
 CostMin =0

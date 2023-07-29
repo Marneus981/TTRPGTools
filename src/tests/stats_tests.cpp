@@ -100,6 +100,21 @@ int main(){
     cout << "Test 4: Set Stat" << endl;
     //Test 4.1: Invalid stat name
     cout << "Test 4 Finished" << endl;
+    //Test 5: Change Stat
+    cout << "Test 5: Change Stat" << endl;
+    cout << "Test 5 Finished" << endl;
+    //Test 6: Allocation Types Helpers
+    cout << "Test 6: Allocation Types Helpers" << endl;
+    //Test 6.1: Standard Array
+    cout << "Test 6.1: Standard Array" << endl;
+    cout << "Test 6.1 Finished" << endl;
+    //Test 6.2: Point Buy
+    cout << "Test 6.2: Point Buy" << endl;
+    cout << "Test 6.2 Finished" << endl;
+    //Test 6.3: Random Allocation
+    cout << "Test 6.3: Random Stats" << endl;
+    cout << "Test 6.3 Finished" << endl;
+
     cout << "Master Tests Finished" << endl;
     
     //Wait on user input to continue

@@ -26,26 +26,31 @@ namespace std{
             ~stats();
 
             //MIGHT need to move this to protected
-            
+
             //Set Value
             int set_stat_val(string stat, int val);
+
+            //Change Value by amount
+            int change_stat_val(string stat, int amount);
 
             //Update Modifier according to Modifier Table
             //In:StatName
             int update_mod(string stat);
 
-            //Allocation Types
-            void std_array(list<int> values);
-            void point_buy(list<int> values);
-            void random_alloc();
-            void manual_alloc(list<int> values);
+            //Allocation Type Helpers
+            list<int> std_array();
+            pair<int,list<int>> point_buy(list<int> values);
+            list<int> random_stats(int min, int max);
+            //void manual_alloc(list<int> values); Basically just standard constructor
 
 
 
         protected:
 
            
-
+            //Path to Game
+                //Should only be asigned in constructor
+            string _Game_Path;
             //Number of Stats
             int _Stats_Num;
 
