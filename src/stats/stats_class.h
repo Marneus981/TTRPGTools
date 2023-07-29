@@ -25,6 +25,22 @@ namespace std{
             //Destructor
             ~stats();
 
+            //MIGHT need to move this to protected
+            
+            //Set Value
+            int set_stat_val(string stat, int val);
+
+            //Update Modifier according to Modifier Table
+            //In:StatName
+            int update_mod(string stat);
+
+            //Allocation Types
+            void std_array(list<int> values);
+            void point_buy(list<int> values);
+            void random_alloc();
+            void manual_alloc(list<int> values);
+
+
 
         protected:
 
@@ -38,18 +54,6 @@ namespace std{
             //vector<string> _Stats;
             //vector<pair<int,int>>  _Stats_Vals;
 
-            //Set Value
-            int set_stat_val(string stat, int val);
-
-            //Update Modifier according to Modifier Table
-            //In:StatName
-            int update_mod(string stat);
-
-            //Allocation Types
-            void std_array(list<int> values);
-            void point_buy(list<int> values);
-            void random_alloc();
-            void manual_alloc(list<int> values);
 
     }; 
 }

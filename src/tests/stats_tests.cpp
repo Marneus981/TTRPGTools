@@ -71,8 +71,10 @@ int main(){
     //auto dest_test = new stats(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
     //delete dest_test;  
     list<int> test1_5_stats = {8,10,12,13,14,15};
-    auto dest_test = new stats(test1_5_stats, correct_path);
-    delete dest_test;  
+    stats* dest_test =NULL;
+    dest_test = new stats(test1_5_stats, correct_path);
+    delete dest_test;
+    dest_test = NULL;  
 
     //Memory Check for Destructor
     cout << "Did the Destructor work? (y/n)" << endl;
