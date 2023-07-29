@@ -47,7 +47,7 @@ stats::stats(list<int> _stats, string _path_to_game){
     vector<pair<string, vector<string>>> stats_settings = get_settings(setting, _path_to_game);
     //Error if _path_to_game is not valid
     if(stats_settings.size() == 0){ 
-        if (verbose_mode) cout << "Error in stats constructor, invalid path to game (Destructor SHOULD be called)" << endl;
+        if (verbose_mode) cout << "Error in stats constructor, invalid path to game" << endl;
         throw invalid_argument("Invalid path to game");
     };
     //Get number of stats at _path_to_game
@@ -105,7 +105,7 @@ std::stats::~stats(){
     //Delete _Num_Stats
     if(verbose_mode) cout << "Deleting _Stats_Num" << endl;
     _Stats_Num = 0;
-    delete &_Stats_Num;
+    //delete _Stats_Num;
     //Delete Pointer?
     //Return?
 };
@@ -145,11 +145,14 @@ int std::stats::update_mod(string stat){
             _Stats_Vals[i].second = stat_pair.second;
         }*/
         for(map<string,pair<int,int>>::iterator iter = _Stats.begin(); iter != _Stats.end(); ++iter){
+            if (verbose_mode) cout << "Updating stat: " << iter->first << endl;
+            if (verbose_mode) cout << "With Value " << iter->second.first << endl;
             int val = iter->second.first;
             //Update modifier
             //Rounded down
             int mod = (val - 10)/2;
             iter->second.second = mod;
+            if (verbose_mode) cout << "And Modifier " << iter->second.second << endl;
         }
         return 0;
     //Check if stat is in _Stats
