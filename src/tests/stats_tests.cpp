@@ -22,9 +22,10 @@ int main(){
     try {
         list<int> test1_stats = {8,10,12,13,14,15};
         stats test1(test1_stats, correct_path); 
-    } catch (const char* msg) {
+    //const char* msg
+    } catch (...) {
         cout << "Test 1 Failed!" << endl;
-        cout << msg << endl;
+        //cout << msg << endl;
         //cerr << msg << endl;
     }
     //Ask if Test 1 passed
@@ -42,9 +43,9 @@ int main(){
     try {
         list<int> test1_1_stats = {8,10,12,13,14,15};
         stats test1_1(test1_1_stats, wrong_path);
-    } catch (const char* msg) {
+    } catch (...) {
         cout << "Test 1.1 Passed!" << endl;
-        cout << msg << endl;
+        //cout << msg << endl;
         //cerr << msg << endl;
     }
     //Figure out if Test 1.1 passed?
@@ -57,9 +58,9 @@ int main(){
     try {
         list<int> test1_2_stats = {8,10,12,13,14};
         stats test1_2(test1_2_stats, correct_path);
-    } catch (const char* msg) {
+    } catch (...) {
         cout << "Test 1.2 Passed!" << endl;
-        cout << msg << endl;
+        //cout << msg << endl;
         //cerr << msg << endl;
     }
     //Figure out if Test 1.2 passed?
