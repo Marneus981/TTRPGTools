@@ -235,14 +235,17 @@ list<int> std::stats::std_array(){
         cout << "Error in std_array, _Stats size != std_array_values_int size" << endl;
         return list<int> {-1,-1,-1,-1,-1,-1};
     };
-    for(int i = 0; i < std_array_values_int.size(); i++){
-        if (verbose_mode) cout << "Checking for existing std_array_values_int value: " << std_array_values_int.front() << endl;
-        //If found, remove from std_array_values_int
-        if(find(_Stats.begin(), _Stats.end(), std_array_values_int.front()) != _Stats.end()){
-            if (verbose_mode) cout << "Found existing std_array_values_int value: " << std_array_values_int.front() << endl;
-            std_array_values_int.pop_front();
+    if (verbose_mode) cout << "Checking for existing std_array values in assignment" << endl;
+    for(auto iter = _Stats.begin(); iter != _Stats.end(); ++iter){
+        auto val_mod_pair = iter->second;
+        int val = val_mod_pair.first;
+        if(find(std_array_values_int.begin(), std_array_values_int.end(), val) != std_array_values_int.end()){
+            if (verbose_mode) cout << "Found existing std_array value: " << val << endl;
+            std_array_values_int.remove(val);
         };
+
     };
+
     //Return std_array_values_int not found in _Stats
     if (verbose_mode) cout << "Returning std_array_values_int not found in _Stats" << endl;
     return std_array_values_int;

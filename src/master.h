@@ -7,6 +7,7 @@
 #include <sstream>
 #include <algorithm>
 #include <bits/stdc++.h>
+#include <conio.h>
 
 namespace std{
     vector<pair<string, vector<string>>> get_settings(string setting, string path_to_game);
