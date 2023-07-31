@@ -20,7 +20,7 @@ int main(){
     vector< pair<string,vector<string>>> test1; 
     
     //Test 1: get_settings
-    cout << "Test 1: get_settings, correct input" << endl;
+    cout << "Test 1: get_settings" << endl;
     //Ask if user wants to skip this test
     cout << "Do you want to skip this test? (y/n)" << endl;
     cin >> input;
@@ -107,6 +107,7 @@ int main(){
             cout << "Test 1.4 Failed! Setting not starting with [ Not Detected" << endl;
         }
         }
+        cout << "Test 1 Finished!" << endl;
     }
     cout << "Master Tests Complete!" << endl;
     
