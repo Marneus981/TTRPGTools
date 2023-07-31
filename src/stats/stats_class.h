@@ -10,6 +10,7 @@
 #include <string>
 #include <algorithm>
 #include <map>
+#include <conio.h>
 #include "C:\CodeProjects\TTRPGTools\src\master.h"
 
 namespace std{

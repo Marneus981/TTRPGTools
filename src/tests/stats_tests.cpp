@@ -6,6 +6,7 @@ bool verbose_mode = false;
 
 int main(){
     //Ask the user if they want to turn on Verbose Mode
+    bool pass;
     cout << "Do you want to turn on Verbose Mode? (y/n)" << endl;
     char input;
     cin >> input;
@@ -19,23 +20,24 @@ int main(){
     string correct_path = "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt";
     string wrong_path = "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\wrong_game_DnD5e.txt";
     //stats test1(list<int> {8,10,12,13,14,15}, "C:\\CodeProjects\\TTRPGTools\\src\\tabletop_games\\DnD\\game_DnD5e.txt");
+    pass = true;
     try {
         list<int> test1_stats = {8,10,12,13,14,15};
-        stats test1(test1_stats, correct_path); 
+        stats test1(test1_stats, wrong_path); 
     //const char* msg
     } catch (...) {
+        pass = false;
         cout << "Test 1 Failed!" << endl;
         //cout << msg << endl;
         //cerr << msg << endl;
     }
     //Ask if Test 1 passed
-    cout << "Did Test 1 pass? (y/n)" << endl;
-    cin >> input;
-    if (input == 'y'){
+    if (pass){
         cout << "Test 1 Passed!" << endl;
-    } else {
-        cout << "Test 1 Failed!" << endl;
     }
+    //// else {
+    ////    cout << "Test 1 Failed!" << endl;
+    ////}
     //Test 1.1: Invalid _path_to_game
     cout << "Test 1.1: Invalid _path_to_game" << endl;
     //##Destructor SHOULD be called here
@@ -118,7 +120,7 @@ int main(){
     cout << "Master Tests Finished" << endl;
     
     //Wait on user input to continue
-    cout << "Press Enter to continue…" << endl;
-    cin.get();
+    cout << "Press any key to continue..." << endl;
+    getch();
     return 0;
 };
