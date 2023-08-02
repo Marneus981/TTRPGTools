@@ -10,17 +10,18 @@
 #include <conio.h>
 
 namespace std{
+    //Below is a legacy function, probably getting rid of it
     vector<pair<string, vector<string>>> get_settings(string setting, string path_to_game);
 
     class setting{
         public:
-            setting();
+            setting(string settings, vector<string> sub_settings, vector<int> sub_setting_types);
             ~setting();
             int refresh_sub_settings();
         protected:
         private:
-            map<string, vector<string>> _sub_settings;
-            map<string,int> _setting_types;
+            map<string, vector<string>> _Sub_Settings;
+            map<string,int> _Types;
 
     };
     class game_config {
@@ -30,8 +31,8 @@ namespace std{
             int refresh_settings();
         protected:
         private:
-            string _path_to_game;
-            map<string, vector<setting>> _settings;
+            string _Path_To_Game;
+            map<string, vector<setting>> _Settings;
     };
 }
 
