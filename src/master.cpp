@@ -101,3 +101,28 @@ vector<pair<string, vector<string>>> std::get_settings(string setting, string _p
     return vector<pair<string, vector<string>>>();
 
 };
+//Setting parser
+setting parse_settings(string path_to_game);
+
+//Game Config Class
+
+game_config::game_config(string path_to_game){
+
+};
+game_config::~game_config(){
+    
+};
+int game_config::refresh_settings(){
+    
+};
+
+//Setting Class
+setting::setting(string settings, vector<string> sub_settings, vector<int> sub_setting_types){
+    
+};
+setting::~setting(){
+    
+};
+int setting::refresh_sub_settings(){
+    
+};
