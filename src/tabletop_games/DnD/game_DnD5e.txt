@@ -1,18 +1,19 @@
+//Types: {0: int, 1: float, 2: string, 3: bool}
 [TTRPG Data]
-GameName =Dungeons and Dragons
-Edition =5th Edition
+{2}GameName =Dungeons and Dragons
+{2}Edition =5th Edition
 [Stat Data]
-Stats =Strenght,Dexterity,Constitution,Intelligence,Wisdom,Charisma
-ScoreInit =1
-ModInit =-5
-ScoreGrpLen =2
-ModScal =1
+{2}Stats =Strenght,Dexterity,Constitution,Intelligence,Wisdom,Charisma
+{0}ScoreInit =1
+{0}ModInit =-5
+{0}ScoreGrpLen =2
+{0}ModScal =1
 [Standard Array]
-StdArray =15,14,13,12,10,8
+{0}StdArray =15,14,13,12,10,8
 [Point Buy]
-PtBuyPts =27
-PtBuyMin =8
-PtBuyMax =15
-CostMin =0
-CostScal =1
+{0}PtBuyPts =27
+{0}PtBuyMin =8
+{0}PtBuyMax =15
+{0}CostMin =0
+{0}CostScal =1
 
