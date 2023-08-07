@@ -103,6 +103,7 @@ vector<pair<string, vector<string>>> std::get_settings(string setting, string _p
 };
 //Setting parser
 setting parse_settings(string path_to_game);
+//Return normal type complex object, then reconstruct it in the pertaining class(es)
 
 //Game Config Class
 
