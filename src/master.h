@@ -43,8 +43,7 @@ namespace std{
             string _Path_To_Game;
             map<string, vector<setting>> _Settings;
     };
-    //Setting parser
-    setting parse_settings(string path_to_game);
+    
 }
 
 
