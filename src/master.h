@@ -10,8 +10,10 @@
 #include <conio.h>
 
 namespace std{
-    //Below is a legacy function, probably getting rid of it
+    //Below is a legacy function, probably getting rid of it once I implement a  better way to do this
     vector<pair<string, vector<string>>> get_settings(string setting, string path_to_game);
+
+    map<string,map<string,vector<string>>> get_all_settings(string setting, string path_to_game);
     
     class setting{
         friend setting parse_settings(string path_to_game);

@@ -23,6 +23,11 @@ vector<pair<string, vector<string>>> std::get_settings(string setting, string _p
     if(verbose_mode) cout << "Searching for " << setting << endl;//Verbose
     while(getline(file, line)){
         if(verbose_mode) cout << "Searching line: " << line << endl;//Verbose
+        //Ignore lines starting with "#"
+        if (line[0] == '#'){
+            if(verbose_mode) cout << "Line starts with #, ignoring" << endl;//Verbose
+            continue;
+        }
         //While it hasnt been found, keep searching
         if (!found_it){
 
@@ -67,6 +72,8 @@ vector<pair<string, vector<string>>> std::get_settings(string setting, string _p
 
         //First string is the setting name
         string setting_name = split_line_equal[0];
+        //Delete first 3 characters of setting name (the "{", the int, and the "}")
+        setting_name.erase(0,3);
         string setting_values = split_line_equal[1];
 
         //Split line into vector of strings separated by ","
@@ -93,7 +100,7 @@ vector<pair<string, vector<string>>> std::get_settings(string setting, string _p
     file.close();
     //If found, return the settings
     if (found_it){
-        if(verbose_mode) cout << "Returning settings" << endl;//Verbose
+        if(verbose_mode) cout << "Returning settings..." << endl;//Verbose
         return return_settings;
     }
     //If not found, return empty vector
@@ -101,6 +108,8 @@ vector<pair<string, vector<string>>> std::get_settings(string setting, string _p
     return vector<pair<string, vector<string>>>();
 
 };
+
+
 //Setting parser
 setting parse_settings(string path_to_game);
 //Return normal type complex object, then reconstruct it in the pertaining class(es)
