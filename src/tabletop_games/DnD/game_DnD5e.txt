@@ -1,4 +1,5 @@
 #Types: {0: int, 1: float, 2: string, 3: bool}
+#Be careful of spaces
 [TTRPG Data]
 {2}GameName=Dungeons and Dragons
 {2}Edition=5th Edition
