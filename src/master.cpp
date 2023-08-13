@@ -168,6 +168,8 @@ map<string,map<string,vector<string>>> get_all_settings(string path_to_game){
                 if(line[2] == '}'){
                     //So far, we know it starts with format {int}, need to corroborate that the next part follows format:thing=thing1,thing2,thing3
                     string subline = line.substr(3,line.size());
+                    //Process subline to have no spaces
+                    subline.erase(remove(subline.begin(), subline.end(), ' '), subline.end());
                     //See if we can split the subline into 2 parts, separated by "="
                     auto equal_pos = subline.find('=');
                     if(equal_pos != string::npos){
@@ -182,7 +184,7 @@ map<string,map<string,vector<string>>> get_all_settings(string path_to_game){
                         return map<string,map<string,vector<string>>>();
                     }
                 }else{
-                    if(verbose_mode) cout << "Error: Third letter in line is not }" << endl;//Verbose
+                    if(verbose_mode) cout << "Error: Third letter in subsetting line is not }" << endl;//Verbose
                     return map<string,map<string,vector<string>>>();
                 }
             }
@@ -194,26 +196,18 @@ map<string,map<string,vector<string>>> get_all_settings(string path_to_game){
             return map<string,map<string,vector<string>>>();
         }
         
-        //It has been found!
+        //map<string,map<string,vector<string>>> return_settings;
+        //return_settings[setting_name][subsetting_name] = vector<string> subsetting_values;
+        //Settings start with "["
+        //Subsettings start with "{int}" and have the format: subsetting_name=subsetting_value1,subsetting_value2,subsetting_value3
         
-        //Once found, for each line of text until  the next string starting with "[" is found, split the line into vector of strings separated by "=" and ","//
-
-        //Check if next line starts with "["
-        //Break in the case we already found the setting we want but the next line is another setting
-        if ((line.find("[") != string::npos)&&(found_it)){
-            if(verbose_mode) cout << "Next line is another setting, breaking" << endl;//Verbose
-            break;
+        if (setting_sub_error == 0){
+            if(verbose_mode) cout << "Next line is a setting" << endl;//Verbose
         }
-        //Continue if next line starts with "[" and does not contain setting
-        if ((line.find("[") != string::npos)&&(line.find(setting) == string::npos)){
-            if(verbose_mode) cout << "Next line is another setting (wanted setting not found yet), continuing" << endl;//Verbose
-            continue;
-        }
-        //Continue if next line does not start with "[" and we have not found setting yet
-        if ((line.find("[") == string::npos)&&(!found_it)){
-            //Redundant?
-            if(verbose_mode) cout << "Next line is not another setting (wanted setting not found yet), continuing" << endl;//Verbose
-            continue;
+    
+        //Subsettings start with "{int}" and have the format: subsetting_name=subsetting_value1,subsetting_value2,subsetting_value3
+        if (setting_sub_error == 1){
+            if(verbose_mode) cout << "Next line is a sub-setting" << endl;//Verbose
         }
 
         //Split line into vector of strings separated by "="
